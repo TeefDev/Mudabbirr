@@ -1,0 +1,326 @@
+/* Mudabbir – Arabic Financial Dashboard (HTML + CSS only)
+   - شبكة 12 عمود، Glassmorphism، RTL
+   - محاذاة الهيدر مع الحاوية
+   - ضبط خاص لشاشات 1366×768
+*/
+
+/* ===== المتغيرات العامة ===== */
+:root{
+  --container:1160px;          /* عرض الحاوية الأساسي */
+  --bg1:#3B1E94;
+  --bg2:#1B58E4;
+  --text:#f7f9ff;
+  --muted:#c7ceee;
+  --surface:rgba(255,255,255,.06);
+  --surface-2:rgba(8,14,45,.45);
+  --border:rgba(255,255,255,.14);
+  --pos:#39d7a1;
+  --neg:#ff6b6b;
+  --accent1:#8a63ff;
+  --accent2:#6f8cff;
+  --radius:18px;
+  --gap:18px;
+  --shadow:0 14px 40px rgba(0,0,0,.28);
+}
+
+/* ===== خلفية زخرفية ===== */
+.bg-deco{
+  position:fixed; inset:0; pointer-events:none; z-index:-1;
+  background:
+    radial-gradient(600px 300px at 15% 12%, rgba(255,255,255,.10), transparent 60%),
+    radial-gradient(800px 500px at 85% -10%, rgba(255,255,255,.10), transparent 55%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
+}
+
+/* ===== أساسيات ===== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Tajawal",system-ui,Segoe UI,Arial;
+  color:var(--text);
+}
+
+/* ===== التخطيط العام ===== */
+.app{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns: 280px 1fr; /* سايدبار ثابت */
+  column-gap: 0;
+}
+
+/* حاوية المحتوى */
+.container{max-width:var(--container); margin-inline:auto}
+
+/* ===== الشريط الجانبي ===== */
+.sidebar{
+  position:sticky; top:0; height:100vh; overflow:auto;
+  display:flex; flex-direction:column; gap:18px;
+  padding:22px;
+  background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(0,0,0,.05));
+  border-inline-end:1px solid rgba(0,0,0,.25);
+  backdrop-filter: blur(8px);
+  z-index:2;
+}
+.brand{display:flex; flex-direction:column; gap:10px}
+.badge{
+  align-self:flex-start; margin-bottom:2px;
+  padding:7px 12px; border-radius:999px; font-weight:800; font-size:12px;
+  color:#0e1438; background:linear-gradient(90deg,var(--accent2),var(--accent1));
+  box-shadow:var(--shadow); white-space:nowrap;
+}
+.title{margin:0; font-size:22px}
+.title .thin{opacity:.85; font-weight:500}
+
+.nav{display:flex; flex-direction:column; gap:10px; margin-top:8px}
+.nav__item{
+  display:flex; align-items:center; gap:12px; padding:12px 14px;
+  color:var(--text); text-decoration:none; border-radius:14px;
+  border:1px solid transparent; transition:.2s ease; min-height:42px;
+}
+.nav__item svg{flex:0 0 18px}
+.nav__item:hover{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18)}
+.is-active{background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.34)}
+
+.sidebar__footer{margin-top:auto}
+.muted{color:var(--muted); font-size:13px}
+
+/* ===== الترويسة (الهيدر) ===== */
+.main{display:flex; flex-direction:column}
+.topbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; 
+  /* محاذاة الهيدر تمامًا مع حافة الحاوية */
+  padding-block:18px;
+  padding-inline: calc(max(22px, (100% - var(--container))/2));
+  background:linear-gradient(180deg, rgba(12,18,52,.72), rgba(12,18,52,.35));
+  border-block-end:1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+}
+.topbar .left{display:flex; align-items:center; gap:12px}
+.logo{
+  width:42px; height:42px; border-radius:14px; display:grid; place-items:center; font-weight:800;
+  color:#0e1438; box-shadow:var(--shadow);
+  background:linear-gradient(145deg, var(--accent2), var(--accent1));
+}
+.page h2{margin:0}
+.topbar .right{display:flex; align-items:center; gap:10px}
+.pill{all:unset; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.12); cursor:default}
+.avatar{width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.55); border:2px solid rgba(255,255,255,.9)}
+
+/* ===== الشبكة ===== */
+.grid{
+  /* نفس محاذاة الهيدر بالضبط */
+  padding-block:22px;
+  padding-inline: calc(max(22px, (100% - var(--container))/2));
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(140px, auto);
+}/* ===== البطاقات ===== */
+.card{
+  grid-column: span 4;
+  background: var(--surface-2);
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  backdrop-filter: blur(6px);
+}
+.span-8{grid-column: span 8}
+
+.card__head{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px}
+
+/* ===== بطاقات KPI ===== */
+.kpi{display:flex; align-items:center; gap:14px; position:relative; overflow:hidden; min-height:140px}
+.kpi::after{content:""; position:absolute; inset:auto 0 0 0; height:4px;
+  background:linear-gradient(90deg, var(--accent2), var(--accent1))}
+.kpi__icon{
+  width:44px; height:44px; border-radius:12px; display:grid; place-items:center; font-size:20px;
+  background:linear-gradient(145deg, rgba(255,255,255,.2), rgba(255,255,255,.05)); border:1px solid rgba(255,255,255,.18)
+}
+.kpi__info h3{margin:0 0 2px}
+.kpi__value{font-size:28px; font-weight:800}
+.kpi__delta{font-size:13px}
+.kpi__delta.up{color:var(--pos)}
+.kpi__delta.down{color:var(--neg)}
+
+/* ===== جدول المعاملات ===== */
+.table{display:grid; gap:10px}
+.table .row{
+  display:grid; grid-template-columns: 1.1fr 1.3fr 1fr .9fr .9fr;
+  gap:12px; align-items:center; padding:12px 14px; border-radius:14px;
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10)
+}
+.table .row.head{background:transparent; border-color:transparent; color:var(--muted); font-weight:700}
+.pos{color:var(--pos); font-weight:700}
+.neg{color:var(--neg); font-weight:700}
+
+/* ===== الفواتير ===== */
+.bills{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px}
+.bill{
+  display:grid; grid-template-columns: 1fr auto auto; gap:12px; align-items:center;
+  padding:12px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04)
+}
+.bill__info{display:flex; flex-direction:column}
+.badge{padding:7px 10px; border-radius:999px; font-weight:700; font-size:12px; background:rgba(255,255,255,.16); color:#0e1438}
+.badge--paid{background:linear-gradient(90deg,#56f1c4,#35b37e)}
+.badge--pending{background:linear-gradient(90deg,#ffd37a,#ffbd45)}
+.badge--due{background:linear-gradient(90deg,#ff8b8b,#ff5b5b)}
+
+/* ===== نظرة عامة على الميزانية ===== */
+.progress{display:flex; flex-direction:column; gap:8px; margin-bottom:12px}
+.progress__meta{display:flex; justify-content:space-between; align-items:center}
+.progress__track{height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12)}
+.progress__fill{display:block; height:100%; background:linear-gradient(90deg,#ffd37a,#ff5b5b)}
+
+/* ===== الدخل مقابل المصروف ===== */
+.bars{display:flex; flex-direction:column; gap:14px}
+.bar{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:center}
+.bar__track{height:14px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.12)}
+.bar__track i{display:block; height:100%; background:linear-gradient(90deg,var(--accent2),var(--accent1))}
+
+/* ===== بطاقات الدفع + BONUS ===== */
+.cards{display:grid; grid-template-columns: repeat(2, minmax(280px,1fr)); gap:18px}
+.bankcard{
+  position:relative; padding:20px; border-radius:20px; min-height:170px;
+  color:#0e153a; display:flex; flex-direction:column; gap:10px;
+  background:linear-gradient(135deg, #e9ecff, #d6dcff);
+  box-shadow: var(--shadow); border:1px solid rgba(0,0,0,.06)
+}
+.bankcard--alt{background:linear-gradient(135deg, #fff4f4, #ffe1e1)}
+.bankcard__chip{width:36px; height:26px; border-radius:6px; background:linear-gradient(135deg,#a4a9db,#eef1ff); border:1px solid rgba(0,0,0,.08)}
+.bankcard__brand{font-weight:800; letter-spacing:.4px}
+.bankcard__num{font-size:20px; font-weight:800}
+.bankcard__meta{display:flex; justify-content:space-between; gap:10px; font-weight:700}/* BONUS — بطاقة لامعة بحدود متدرجة ولمعة sweep */
+.glossy{
+  color:var(--text);
+  background:linear-gradient(135deg, #141a4a, #0d1433);
+  border:1px solid rgba(255,255,255,.18);
+  overflow:hidden;
+}
+.glossy::before{
+  content:""; position:absolute; inset:-2px;
+  background:conic-gradient(from 0deg, var(--accent1), var(--accent2), var(--accent1));animation: spin 7s linear infinite; filter: blur(10px); opacity:.45;
+}
+.glossy::after{
+  content:""; position:absolute; inset:1.8px; border-radius:18px;
+  background:linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+}
+.glossy > *{position:relative; z-index:1}
+.shine{
+  position:absolute; inset:0; background:linear-gradient(75deg, transparent 0%, rgba(255,255,255,.18) 50%, transparent 100%);
+  transform: translateX(-120%); filter: blur(2px); animation: sweep 3.8s ease-in-out infinite;
+}
+@keyframes spin{to{transform: rotate(1turn)}}
+@keyframes sweep{50%{transform: translateX(30%)} 100%{transform: translateX(120%)}}
+
+/* ===== استجابة عامة ===== */
+@media (max-width: 1180px){
+  :root{ --container: 100%; }
+  .grid{ padding-inline:12px }
+  .topbar{ padding-inline:12px }
+}
+@media (max-width: 1100px){
+  .app{grid-template-columns: 92px 1fr}
+  .brand .title{font-size:0}
+  .nav__item{justify-content:center}
+  .nav__item span{display:none}
+  .span-8{grid-column: span 12}
+  .card{grid-column: span 6}
+}
+@media (max-width: 720px){
+  .grid{grid-template-columns: repeat(6, 1fr)}
+  .card,.span-8{grid-column: span 6}
+}
+
+/* ===== ضبط خاص لشاشات 1366×768 (وأقرب) ===== */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  :root{ --container:1080px; } /* تشديد الحاوية */
+  .grid{ gap: 16px; grid-auto-rows: minmax(130px, auto); }
+  .card{ border-radius: 16px; padding: 16px; box-shadow: 0 10px 28px rgba(0,0,0,.24); }
+  .kpi{ gap: 12px; }
+  .kpi__icon{ width: 40px; height: 40px; border-radius: 10px; font-size: 18px; }
+  .kpi__info h3{ font-size: 15px; }
+  .kpi__value{ font-size: 24px; }
+  .kpi__delta{ font-size: 12px; }
+  .table .row{
+    grid-template-columns: 1.05fr 1.25fr 1fr .9fr .9fr;
+    gap: 10px; padding: 10px 12px; border-radius: 12px;
+  }
+  .bill{ padding: 10px 12px; border-radius: 12px; }
+  .summary li{ padding: 10px 12px; border-radius: 12px; }
+  .progress__track{ height: 10px; }
+  .bar__track{ height: 12px; }
+  .cards{ grid-template-columns: repeat(2, minmax(260px,1fr)); gap: 16px; }
+  .bankcard{ min-height: 156px; border-radius: 18px; padding: 18px; }
+  .bankcard__num{ font-size: 18px; }
+  .glossy::after{ border-radius: 18px; }
+  .topbar{ padding-block: 16px; }
+  .logo{ width: 38px; height: 38px; border-radius: 12px; }
+  .avatar{ width: 32px; height: 32px; }
+  .pill{ padding: 5px 9px; }
+}
+
+/* ===== بديل عند عدم دعم الخلفية الضبابية ===== */
+@supports not ((backdrop-filter: blur(6px)) or (-webkit-backdrop-filter: blur(6px))) {
+  .sidebar, .topbar, .card{ background: rgba(10,14,40,.60); }
+}
+
+/* ===== تحسين القراءة وتوحيد الحدود ===== */
+.muted{ color: #d4daf5; opacity: .9; }
+.card, .bill, .summary li, .table .row{ border-color: rgba(255,255,255,.12); }
+/* =========[ FIX PACK — Lock layout & align with sidebar ]========= */
+
+/* 1) إيقاف أي تمرير أفقي وتثبيت شريط التمرير العمودي لمنع الاهتزاز */
+html, body { overflow-x: hidden; }
+body { overflow-y: scroll; }
+
+/* 2) اجعل عمود المحتوى يقبل الانكماش ولا يسبب تمدد */
+.app{ grid-template-columns: 280px minmax(0,1fr); }
+.main{ min-width: 0; }      /* مهم جدًا مع Grid/Flex */
+
+/* 3) محاذاة الترويسة والشبكة تمامًا مع حافة الحاوية + منع التمدد */
+:root{ --container: 1080px; }  /* عرض مضبوط للابتوبات 1366px */
+.topbar{
+  padding-inline: clamp(16px, (100% - var(--container))/2, 28px);
+}
+.grid{
+  padding-inline: clamp(16px, (100% - var(--container))/2, 28px);
+  grid-template-columns: repeat(12, minmax(0,1fr));  /* يمنع أعمدة تتجاوز العرض */
+}
+
+/* 4) لا تسمح لأي كارد/جدول أن يدفع العرض للخارج */
+.card{ max-width: 100%; }
+.cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }/* 5) صفوف الجدول بأعمدة مرنة آمنة (ما تكسر الحاوية) */
+.table .row{
+  grid-template-columns:
+    minmax(0,1.05fr)   /* التاريخ */
+    minmax(0,1.25fr)   /* الوصف  */
+    minmax(0,1fr)      /* الفئة   */
+    minmax(0,.9fr)     /* النوع   */
+    minmax(0,.9fr);    /* المبلغ  */
+}
+
+/* 6) ضبط المسافات حتى تكون البطاقات على خط واحد مع القائمة */
+.grid{ gap: 16px; }
+.card{ padding: 16px; border-radius: 16px; box-shadow: 0 10px 28px rgba(0,0,0,.24); }
+
+/* 7) تحجيم عناصر KPI والبارز لتوازن بصري على 1366px */
+.kpi{ gap: 12px; min-height: 136px; }
+.kpi__icon{ width: 40px; height: 40px; border-radius: 10px; font-size: 18px; }
+.kpi__value{ font-size: 24px; }
+.kpi__delta{ font-size: 12px; }
+
+/* 8) تخفيف ارتفاع المسارات البيانية */
+.progress__track{ height: 10px; }
+.bar__track{ height: 12px; }
+
+/* 9) حماية إضافية: أي عنصر يتجاوز يُقصّ داخليًا بدل ما يوسّع الصفحة */
+.grid, .card, .table, .bills, .summary{ overflow: hidden; }
+
+/* 10) لو جهازك ما يدعم البلور بشكل جيد، ثبّتي خلفية زجاجية ثابتة */
+@supports not ((backdrop-filter: blur(6px)) or (-webkit-backdrop-filter: blur(6px))) {
+  .sidebar, .topbar, .card{ background: rgba(10,14,40,.60); }
+}
