@@ -63,3 +63,6 @@ Mudabbirr/
 ├── index.html    # الصفحة الرئيسية للوحة التحكم
 ├── styles.css    # جميع التنسيقات والصوريات
 └── .gitattributes
+├── index.html    # الصفحة الرئيسية للوحة التحكم
+├── styles.css    # جميع التنسيقات والصوريات
+└── .gitattributes
