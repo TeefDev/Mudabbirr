@@ -9,9 +9,8 @@ The goal of this project is to demonstrate the ability to design high-quality RT
 
 ---
 
-## 🖼️ Preview  
-*(Add your screenshot here)*  
-![Mudabbirr Preview](screenshot.png)
+## 🖼️ Photo 
+![Mudabbirr Dashboard](./mudabbirr-preview.jpeg)
 
 ---
 
