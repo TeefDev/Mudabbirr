@@ -1,98 +1,96 @@
-## 💼 Mudabbirr — Modern Arabic Financial Dashboard  
-# مدبّر — لوحة تحكم مالية عربية عصرية
+# 💼 Mudabbirr — Modern Arabic Financial Dashboard  
+# مدبّر — لوحة تحكم مالية عربية متقدمة
 
-A polished, visually modern financial dashboard built with HTML + CSS only, showcasing professional UI/UX design, RTL support, and clean layout architecture.  
-واجهة مالية عربية متكاملة مبنية باستخدام **HTML + CSS فقط**، تُظهر مهارة في تصميم الواجهات، ودعم اتجاه RTL، وتنظيم تخطيطي احترافي.
+Mudabbirr is a clean, modern, and carefully crafted financial dashboard built entirely with HTML + CSS.  
+The goal of this project is to demonstrate the ability to design high-quality RTL interfaces, structure clear visual hierarchies, and build production-level dashboard layouts without using any JavaScript or frameworks.
 
----
-
-## 🖼️ Preview | المعاينة  
-> *(Add your screenshot here)*  
-![Mudabbirr Dashboard](screenshot.png)
+مدبّر هو نموذج لوحة تحكم مالية بتصميم عربي احترافي، يعتمد على HTML وCSS فقط.  
+يقدّم المشروع تجربة منظمة، واضحة، ومتوازنة—تركز على التصميم المتجاوب، ودقة المحاذاة، وإظهار قوة بناء واجهات RTL على مستوى احترافي.
 
 ---
 
-## 🔥 Core Strengths Demonstrated  
-## 🔥 أبرز القدرات التي يظهرها المشروع
-
-- Fully RTL-friendly Arabic interface  
-- واجهة عربية RTL كاملة ومحاذاة دقيقة  
-
-- Clean, semantic, and scalable HTML structure  
-- هيكلة HTML واضحة، دلالية، وسهلة التطوير  
-
-- Advanced CSS using Grid, Flexbox, variables & animations  
-- استخدام متقدم لـ CSS عبر Grid و Flexbox والمتغيرات والحركات  
-
-- Modern visual style with glassmorphism + gradients  
-- تصميم حديث بتأثير الزجاجية والتدرجات اللونية  
-
-- Optimized for 1366×768 laptop screens  
-- متوافق تمامًا مع شاشات اللابتوب 1366×768  
-
-- Complete dashboard sections:
-  - KPIs (Balance · Income · Expenses)  
-  - Transactions Table  
-  - Monthly Bills  
-  - Budget Overview  
-  - Income vs Expense  
-  - Payment Methods (Glossy Card)  
-  - Account Summary  
-
-- أقسام لوحة تحكم متكاملة:
-  - مؤشرات الأداء (الرصيد · الدخل · المصروفات)  
-  - جدول المعاملات  
-  - الفواتير الشهرية  
-  - الميزانية  
-  - مقارنة الدخل بالمصروف  
-  - طرق الدفع (بطاقة لامعة مميزة)  
-  - ملخص الحسابات  
+## 🖼️ Preview  
+*(Add your screenshot here)*  
+![Mudabbirr Preview](screenshot.png)
 
 ---
 
-## 🛠️ Technologies Used  
-## 🛠️ التقنيات المستخدمة
+## ✨ Project Overview  
+## ✨ نظرة عامة على المشروع
 
-HTML5 • CSS3 • Google Fonts (Tajawal) • Git/GitHub
+Mudabbirr delivers a complete financial overview through a structured and polished UI:  
+- KPI cards showcasing balance, income, and expenses  
+- Recent transactions presented in a clean, readable table  
+- Monthly bills with clear payment statuses  
+- Budget tracking with progress indicators  
+- A visual comparison of income vs. expense  
+- A premium “payment methods” section featuring a glossy animated bank card  
+- A summarized financial breakdown for quick insights  
 
-- No JavaScript — No Frameworks  
-- بدون JavaScript — بدون أي مكتبات خارجية  
+يعرض مدبّر تصورًا شاملًا للحالة المالية من خلال واجهة سلسة ومنظمة:  
+- بطاقات مؤشرات الأداء (الرصيد · الدخل · المصروفات)  
+- جدول معاملات منسّق وواضح  
+- فواتير شهرية مع حالة الدفع  
+- تقدم الميزانية لكل فئة  
+- مقارنة بصرية بين الدخل والمصروف  
+- قسم طرق الدفع مع بطاقة لامعة احترافية  
+- ملخص مالي مختصر وسهل القراءة  
 
 ---
 
-## 📂 Project Structure  
-## 📂 هيكلة المشروع
-Mudabbirr/
-├── index.html      # Main Dashboard Page | الصفحة الرئيسية
-├── styles.css      # Styling & Layout | التنسيقات والتخطيط
-└── .gitattributes
+## 🚀 Design Philosophy  
+## 🚀 فلسفة التصميم
+
+This project focuses on creating a premium dashboard feel using CSS alone:  
+- Glassmorphism for depth and elegance  
+- Gradients for a modern look  
+- Balanced spacing and typography  
+- 12-column grid layout inspired by real SaaS dashboards  
+- RTL-first approach for Arabic environments  
+- Smooth responsiveness optimized for 1366×768 screens  
+
+يركّز التصميم على تقديم تجربة Dashboard راقية باستخدام CSS فقط:  
+- تأثير الزجاجية لإضافة عمق ولمسة عصرية  
+- تدرجات لونية حديثة  
+- توازن بصري في المسافات والخطوط  
+- شبكة 12 عمود مثل لوحات التحكم الاحترافية  
+- تصميم RTL من الأساس  
+- توافق مثالي مع شاشات اللابتوب القياسية  
 
 ---
 
-## 🚀 What This Project Demonstrates  
-## 🚀 ماذا يثبت هذا المشروع؟
+## 🛠️ Technologies  
+## 🛠️ التقنيات
 
-- Ability to build a full dashboard from scratch  
+- HTML5 for clean, semantic structure  
+- CSS3 for layout, grid, animations, and glass effects  
+- Google Fonts — Tajawal for professional Arabic typography  
+- Git/GitHub for versioning and deployment  
+
+No JavaScript.  
+No frameworks.  
+Just focused, handcrafted UI design.
+
+---
+
+## 🌟 What This Project Demonstrates  
+## 🌟 ماذا يثبت هذا المشروع؟
+
+- Ability to build complete dashboard systems from scratch  
+- Crafting modern Arabic interfaces with pixel-level precision  
+- Strong command of CSS layouts (Grid + Flexbox)  
+- Designing readable, scalable UI components  
+- Professional Git practices and clean project presentation  
+
 - القدرة على بناء لوحة تحكم كاملة من الصفر  
-
-- Expertise in Arabic UI/UX & RTL layouts  
-- احترافية في تصميم الواجهات العربية واتجاه RTL  
-
-- Strong command of CSS-only layout systems  
-- إتقان أنظمة التخطيط باستخدام CSS فقط  
-
-- Creating clean, modern, high-end interfaces  
-- إنشاء واجهات حديثة ونظيفة واحترافية  
-
-- Professional GitHub workflow & project structure  
-- تنظيم احترافي للمستودع واستخدام GitHub  
+- احتراف في تصميم واجهات عربية دقيقة ومنظمة  
+- فهم عميق لتخطيطات CSS (Grid وFlexbox)  
+- تصميم عناصر واجهة قابلة للتطوير وسهلة القراءة  
+- عرض المشروع بشكل احترافي يناسب الشركات  
 
 ---
 
 ## 👩‍💻 Developer  
 ## 👩‍💻 المطوّرة
 
-Teef M. Karyry — TeefDev  
-
-Crafting modern Arabic digital experiences ✨  
-تصميم تجارب رقمية عربية عصرية ✨
+Teef M. Karyry — TeefDev
