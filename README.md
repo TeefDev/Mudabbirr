@@ -62,5 +62,6 @@ Just focused, handcrafted UI development.
 Mudabbirr highlights both technical execution and aesthetic design, making it a strong addition to a UI-focused portfolio.
 
 
-Developer
+## Developer
+
 Teef M. Karyry — TeefDev
