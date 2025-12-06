@@ -26,7 +26,7 @@ The design follows a practical and realistic dashboard layout similar to real fi
 ![Mudabbirr Dashboard](./mudabbirr-preview.jpeg)
 
 
-## Future Enhancements
+## Key Features
 
 While Mudabbirr is currently a static, design-focused dashboard built with pure HTML and CSS, there are several planned enhancements that could elevate the dashboard into a fully functional financial system:
  ## • Dynamic Data Integration
