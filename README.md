@@ -73,9 +73,13 @@ Just focused, handcrafted UI development.
 ## What This Project Demonstrates
 
  • Ability to build complete dashboard layouts from scratch
+ 
  • Strong skill in designing Arabic RTL interfaces with precision
+ 
  • Deep understanding of CSS Grid and Flexbox systems
+ 
  • Experience creating visually readable, scalable UI components
+ 
  • Professional project organization and Git workflow
 
 Mudabbirr highlights both technical execution and aesthetic design, making it a strong addition to a UI-focused portfolio.
