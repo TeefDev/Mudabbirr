@@ -29,19 +29,19 @@ The design follows a practical and realistic dashboard layout similar to real fi
 ## Future Enhancements
 
 While Mudabbirr is currently a static, design-focused dashboard built with pure HTML and CSS, there are several planned enhancements that could elevate the dashboard into a fully functional financial system:
- • Dynamic Data Integration
+ ## • Dynamic Data Integration
 Connecting the dashboard to real financial data using APIs or a backend service.
- • User Authentication & Profiles
+##  • User Authentication & Profiles
 Implementing login and role-based access to personalize financial views.
- • Interactive Charts & Visualizations
+##  • Interactive Charts & Visualizations
 Adding live charts using libraries such as Chart.js or D3.js to display trends and insights more effectively.
- • Transaction Management System
+##  • Transaction Management System
 Allowing users to add, edit, or categorize expenses and income directly from the dashboard.
- • Multi-Language Support
+##  • Multi-Language Support
 Expanding the interface beyond Arabic to support English and other languages with seamless switching.
- • Theme Customization
+##  • Theme Customization
 Offering light/dark mode and customizable color palettes for better accessibility and user preference.
- • Mobile App Version
+##  • Mobile App Version
 Converting the dashboard into a mobile-friendly app experience using responsive design or frameworks like Flutter.
 
 
